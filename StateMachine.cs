@@ -1,8 +1,6 @@
 using Godot;
 using Godot.Collections;
 
-namespace Demo;
-
 [GlobalClass]
 public partial class StateMachine : Node
 {

@@ -1,8 +1,6 @@
 ﻿using Godot;
 using Godot.Collections;
 
-namespace Demo;
-
 public static class Extension
 {
     public static void Clear(this Tween @tween)

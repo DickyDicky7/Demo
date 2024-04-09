@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://2cw4ksdr7s43"
+path="res://.godot/imported/tree-vase.obj-fdfb32fa4d62c3c83d18720cc8c5aebc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree-vase.obj-fdfb32fa4d62c3c83d18720cc8c5aebc.mesh"]
+
+source_file="res://assets/tree_pack_v_0_1/dist/obj_mtl/tree-vase.obj"
+dest_files=["res://.godot/imported/tree-vase.obj-fdfb32fa4d62c3c83d18720cc8c5aebc.mesh", "res://.godot/imported/tree-vase.obj-fdfb32fa4d62c3c83d18720cc8c5aebc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

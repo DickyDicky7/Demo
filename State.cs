@@ -1,7 +1,5 @@
 using Godot;
 
-namespace Demo;
-
 [GlobalClass]
 public partial class State : Node
 {
