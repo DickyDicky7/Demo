@@ -1,8 +1,8 @@
 [gd_resource type="EditorSettings" format=3]
 
 [resource]
-export/android/android_sdk_path = "%USERPROFILE%/AppData/Local/Android/Sdk"
-export/android/debug_keystore   = "%USERPROFILE%/.android/debugs.keystore"
+export/android/android_sdk_path = "%USERPROFILE%\\AppData\\Local\\Android\\Sdk"
+export/android/debug_keystore   = "%USERPROFILE%\\.android\\debugs.keystore"
 export/android/debug_keystore_user =             "androiddebugkey"
 export/android/debug_keystore_pass =             "android"
 

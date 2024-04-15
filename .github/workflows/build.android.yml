@@ -24,9 +24,9 @@ jobs:
 
       - run : |
           keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debugs.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
-          move ./debugs.keystore  %USERPROFILE%/.android/
-          mkdir -p                                            %USERPROFILE%/AppData/Roaming/Godot
-          copy ${{ github.workspace }}/editor_settings-4.tres %USERPROFILE%/AppData/Roaming/Godot
+          move ./debugs.keystore  %USERPROFILE%\.android\
+          mkdir -p                                            %USERPROFILE%\AppData\Roaming\Godot
+          copy ${{ github.workspace }}/editor_settings-4.tres %USERPROFILE%\AppData\Roaming\Godot
       
       - name: export game
         id  : export
