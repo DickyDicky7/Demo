@@ -23,13 +23,10 @@ jobs:
         uses: android-actions/setup-android@v3.2.1
 
       - run : |
-          keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
-          mv ./debug.keystore ~/.android
+          keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debugs.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
+          mv ./debugs.keystore ~/.android
           mkdir -p ~/.config/godot
           cp ${{ github.workspace }}/editor_settings-4.tres ~/.config/godot/
-          echo "keystore/debug=\"~/.android/debug.keystore\"" >> ${{ github.workspace }}/export_presets.cfg
-          echo "keystore/debug_user=\"androiddebugkey\"" >> ${{ github.workspace }}/export_presets.cfg
-          echo "keystore/debug_password=\"android\"" >> ${{ github.workspace }}/export_presets.cfg
       
       - name: export game
         id  : export
