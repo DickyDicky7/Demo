@@ -1,0 +1,6 @@
+[gd_resource type="EditorSettings" format=2]
+
+[resource]
+export/android/debug_keystore   = "~/.android"
+export/android/debug_keystore_user = "androiddebug"
+export/android/debug_keystore_pass = "android"
