@@ -3,10 +3,10 @@ name: ANDROID BUILD
 on  :
   workflow_dispatch
 
-# env :
-#   GODOT_ANDROID_KEYSTORE_DEBUG_PATH : ~/.android
-#   GODOT_ANDROID_KEYSTORE_DEBUG_USER    : androiddebug
-#   GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD: android
+env :
+  GODOT_ANDROID_KEYSTORE_DEBUG_PATH    : ~/demo/debug.keystore
+  GODOT_ANDROID_KEYSTORE_DEBUG_USER    : androiddebug
+  GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD: android
 
 jobs:
   export-game:
@@ -26,11 +26,6 @@ jobs:
       
       - name: setup android sdk tools
         uses: android-actions/setup-android@v3.2.1
-
-      # - name: use custom editor settings
-      #   run : |
-      #     mkdir -p ~/.config/godot
-      #     cp ./editor_settings-3.tres ~/.config/godot/
 
       - run : |
           keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
