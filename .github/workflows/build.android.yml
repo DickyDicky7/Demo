@@ -26,7 +26,7 @@ jobs:
           keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debugs.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
           mv ./debugs.keystore ~/.android
           mkdir -p ~/.config/godot
-          cp ~/demo/editor_settings-4.tres ~/.config/godot/
+          cp ${{ github.workspace }}/editor_settings-4.tres ~/.config/godot/
       
       - name: export game
         id  : export
