@@ -27,6 +27,9 @@ jobs:
           mv ./debug.keystore ~/.android
           mkdir -p ~/.config/godot
           cp ${{ github.workspace }}/editor_settings-4.tres ~/.config/godot/
+          echo "keystore/debug=\"~/.android/debug.keystore\"" >> ${{ github.workspace }}/export_presets.cfg
+          echo "keystore/debug_user=\"androiddebugkey\"" >> ${{ github.workspace }}/export_presets.cfg
+          echo "keystore/debug_password=\"android\"" >> ${{ github.workspace }}/export_presets.cfg
       
       - name: export game
         id  : export
