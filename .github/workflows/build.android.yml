@@ -5,7 +5,7 @@ on  :
 
 jobs:
   export-game:
-    runs-on  : ubuntu-latest
+    runs-on  : windows-latest
     permissions:
        write-all
     name :    Export Game
@@ -24,15 +24,15 @@ jobs:
 
       - run : |
           keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debugs.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -deststoretype pkcs12
-          mv ./debugs.keystore ~/.android
-          mkdir -p ~/.config/godot
-          cp ${{ github.workspace }}/editor_settings-4.tres ~/.config/godot/
+          move ./debugs.keystore  %USERPROFILE%/.android/
+          mkdir -p                                            %USERPROFILE%/AppData/Roaming/Godot
+          copy ${{ github.workspace }}/editor_settings-4.tres %USERPROFILE%/AppData/Roaming/Godot
       
       - name: export game
         id  : export
         uses: firebelley/godot-export@v5.2.1
         with:
-          godot_executable_download_url      : https://downloads.tuxfamily.org/godotengine/4.3/dev5/Godot_v4.3-dev5_linux.x86_64.zip
+          godot_executable_download_url      : https://downloads.tuxfamily.org/godotengine/4.3/dev5/Godot_v4.3-dev5_win64.exe.zip
           godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.3/dev5/Godot_v4.3-dev5_export_templates.tpz
           relative_project_path: ./
           export_debug  : true
