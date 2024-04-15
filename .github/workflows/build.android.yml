@@ -12,7 +12,10 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4.1.1
-
+      
+      - name: setup android sdk tools
+        uses: android-actions/setup-android@v3.2.1
+        
       - name: export game
         id  : export
         uses: firebelley/godot-export@v5.2.1
