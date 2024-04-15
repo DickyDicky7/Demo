@@ -3,11 +3,6 @@ name: ANDROID BUILD
 on  :
   workflow_dispatch
 
-env :
-  GODOT_ANDROID_KEYSTORE_DEBUG_PATH    : ~/demo/debug.keystore
-  GODOT_ANDROID_KEYSTORE_DEBUG_USER    : androiddebug
-  GODOT_ANDROID_KEYSTORE_DEBUG_PASSWORD: android
-
 jobs:
   export-game:
     runs-on  : ubuntu-latest
