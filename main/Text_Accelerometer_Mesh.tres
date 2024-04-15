@@ -1,0 +1,8 @@
+[gd_resource type="TextMesh" load_steps=2 format=3 uid="uid://dlalihbtmj3f8"]
+
+[ext_resource type="Material" uid="uid://cjgjrqq7d6dw3" path="res://main/Text_Mesh_Material.tres" id="1_owk0r"]
+
+[resource]
+material = ExtResource("1_owk0r")
+text = "Accelerometer:"
+font_size = 10

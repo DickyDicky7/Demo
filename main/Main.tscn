@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://li5ljjbxn5qt"]
+[gd_scene load_steps=14 format=3 uid="uid://li5ljjbxn5qt"]
 
 [ext_resource type="Script" path="res://main/Main.cs" id="1_0citd"]
 [ext_resource type="Environment" uid="uid://cw63jydl833ln" path="res://main/Main_Environment.tres" id="2_8qduf"]
@@ -8,6 +8,11 @@
 [ext_resource type="MultiMesh" uid="uid://5ny3i460pqep" path="res://ground/Ground_Mesh_Multi---.tres" id="4_33uqy"]
 [ext_resource type="Script" path="res://main/MultiMeshWithCollision.cs" id="5_4g0gd"]
 [ext_resource type="QuadMesh" uid="uid://dn0fhyvdo12rc" path="res://len/Len_Mesh.tres" id="7_6ojqu"]
+[ext_resource type="Script" path="res://main/Text.cs" id="9_01ka5"]
+[ext_resource type="TextMesh" uid="uid://bjaf5cvc1uxjv" path="res://main/Text_FPS_Mesh.tres" id="9_dc0fy"]
+[ext_resource type="TextMesh" uid="uid://7j6eg5p770ej" path="res://main/Text__OS_Mesh.tres" id="10_16abf"]
+[ext_resource type="TextMesh" uid="uid://dlduoesqr5haa" path="res://main/Text_____Gyroscope_Mesh.tres" id="11_cdu0t"]
+[ext_resource type="TextMesh" uid="uid://dlalihbtmj3f8" path="res://main/Text_Accelerometer_Mesh.tres" id="12_1i0eq"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_0citd")
@@ -51,3 +56,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
 [node name="Camera3D_Temp" type="Camera3D" parent="Cop"]
 transform = Transform3D(-1, 1.51808e-08, -8.60946e-08, 0, 0.984808, 0.173648, 8.74228e-08, 0.173648, -0.984808, 0, 5, -10)
 current = true
+
+[node name="Text" type="Node3D" parent="Cop/Camera3D_Temp" node_paths=PackedStringArray("MeshFPS", "MeshOS", "MeshGyroscope", "MeshAccelerometer")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1)
+script = ExtResource("9_01ka5")
+MeshFPS = NodePath("FPS")
+MeshOS  = NodePath("_OS")
+MeshGyroscope     = NodePath("____Gyroscope")
+MeshAccelerometer = NodePath("Accelerometer")
+
+[node name="FPS" type="MeshInstance3D" parent="Cop/Camera3D_Temp/Text"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = ExtResource("9_dc0fy")
+
+[node name="_OS" type="MeshInstance3D" parent="Cop/Camera3D_Temp/Text"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+mesh = ExtResource("10_16abf")
+
+[node name="____Gyroscope" type="MeshInstance3D" parent="Cop/Camera3D_Temp/Text"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = ExtResource("11_cdu0t")
+
+[node name="Accelerometer" type="MeshInstance3D" parent="Cop/Camera3D_Temp/Text"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+mesh = ExtResource("12_1i0eq")

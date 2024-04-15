@@ -1,0 +1,8 @@
+[gd_resource type="TextMesh" load_steps=2 format=3 uid="uid://7j6eg5p770ej"]
+
+[ext_resource type="Material" uid="uid://cjgjrqq7d6dw3" path="res://main/Text_Mesh_Material.tres" id="1_334yw"]
+
+[resource]
+material = ExtResource("1_334yw")
+text = "OS:"
+font_size = 10

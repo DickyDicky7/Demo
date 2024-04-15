@@ -1,0 +1,8 @@
+[gd_resource type="TextMesh" load_steps=2 format=3 uid="uid://bjaf5cvc1uxjv"]
+
+[ext_resource type="Material" uid="uid://cjgjrqq7d6dw3" path="res://main/Text_Mesh_Material.tres" id="1_3uwqd"]
+
+[resource]
+material = ExtResource("1_3uwqd")
+text = "FPS:"
+font_size = 10
