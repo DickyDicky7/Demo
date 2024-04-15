@@ -1,0 +1,8 @@
+[gd_resource type="Environment" load_steps=2 format=3 uid="uid://cw63jydl833ln"]
+
+[ext_resource type="Sky" uid="uid://ddhsqd3imij5s" path="res://main/Main_Environment_Sky.tres" id="1_8gequ"]
+
+[resource]
+background_mode = 2
+sky = ExtResource("1_8gequ")
+tonemap_mode = 2

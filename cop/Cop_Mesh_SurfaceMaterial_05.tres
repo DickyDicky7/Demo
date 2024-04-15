@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dw6k0trowg2xh"]
+
+[resource]
+resource_name = "TailLights"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.639282, 0.0744472, 0.0593709, 1)
+emission_enabled = true
+emission = Color(0.799103, 0.093059, 0.0742136, 1)
+emission_energy_multiplier = 0.0

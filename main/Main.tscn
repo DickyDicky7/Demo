@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://li5ljjbxn5qt"]
+
+[ext_resource type="Script" path="res://main/Main.cs" id="1_0citd"]
+[ext_resource type="Environment" uid="uid://cw63jydl833ln" path="res://main/Main_Environment.tres" id="2_8qduf"]
+[ext_resource type="PackedScene" uid="uid://brwwrhbhw84sd" path="res://cop/Cop.tscn" id="2_611rl"]
+[ext_resource type="PlaneMesh" uid="uid://bleauvjknb3i3" path="res://ground/Groud_Mesh.tres" id="2_ufqtg"]
+[ext_resource type="Shape3D" uid="uid://ceoxvwv2ki4v6" path="res://ground/Ground_CollisionShape3D.tres" id="3_u55ng"]
+[ext_resource type="MultiMesh" uid="uid://5ny3i460pqep" path="res://ground/Ground_Mesh_Multi---.tres" id="4_33uqy"]
+[ext_resource type="Script" path="res://main/MultiMeshWithCollision.cs" id="5_4g0gd"]
+[ext_resource type="QuadMesh" uid="uid://dn0fhyvdo12rc" path="res://len/Len_Mesh.tres" id="7_6ojqu"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_0citd")
+
+[node name="Env" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_8qduf")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="Mesh" type="MeshInstance3D" parent="Ground"]
+mesh = ExtResource("2_ufqtg")
+
+[node name="MeshMultiTrees" type="MultiMeshInstance3D" parent="Ground"]
+multimesh = ExtResource("4_33uqy")
+script = ExtResource("5_4g0gd")
+
+[node name="CollisionShape3D_Mesh" type="CollisionShape3D" parent="Ground"]
+shape = ExtResource("3_u55ng")
+
+[node name="Cop" parent="." node_paths=PackedStringArray("Camera3DPivot") instance=ExtResource("2_611rl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+Camera3DPivot = NodePath("Camera3DPivot")
+
+[node name="Camera3DPivot" type="Node3D" parent="Cop"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 1, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Cop/Camera3DPivot"]
+transform = Transform3D(-1, 2.99003e-08, -8.21505e-08, 0, 0.939693, 0.34202, 8.74228e-08, 0.34202, -0.939693, 0, 0, 0)
+
+[node name="Len" type="MeshInstance3D" parent="Cop/Camera3DPivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+mesh = ExtResource("7_6ojqu")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Cop/Camera3DPivot/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5)
+
+[node name="Camera3D_Temp" type="Camera3D" parent="Cop"]
+transform = Transform3D(-1, 1.51808e-08, -8.60946e-08, 0, 0.984808, 0.173648, 8.74228e-08, 0.173648, -0.984808, 0, 5, -10)
+current = true

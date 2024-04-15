@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ca7xt6kbolt6l"]
+
+[resource]
+resource_name = "tree_bark_dark"
+albedo_color = Color(0.5, 0.3, 0.2, 1)
+metallic = 0.5

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dhalrdtm1fhgo"]
+
+[ext_resource type="Texture2D" uid="uid://bky6ymv70f88r" path="res://assets/STEERING_WHEELS_01_001_COLOR_BASIC.png" id="1_xekow"]
+
+[resource]
+resource_name = "BASIC"
+cull_mode = 2
+albedo_texture = ExtResource("1_xekow")
+metallic = 0.5
+roughness = 0.5

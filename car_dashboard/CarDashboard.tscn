@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://3vbbw216o8xp"]
+
+[ext_resource type="Script" path="res://car_dashboard/CarDashboard.cs" id="1_6lg83"]
+[ext_resource type="ArrayMesh" uid="uid://dhr5jjch8yxvn" path="res://car_dashboard/CarDashboard_SteeringWheel_Mesh.tres" id="1_tmqrg"]
+
+[node name="CarDashBoard" type="MeshInstance3D" node_paths=PackedStringArray("SteeringWheel")]
+script = ExtResource("1_6lg83")
+SteeringWheel = NodePath("SteeringWheel")
+
+[node name="SteeringWheel" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0)
+mesh = ExtResource("1_tmqrg")

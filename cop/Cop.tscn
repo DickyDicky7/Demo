@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://brwwrhbhw84sd"]
+[gd_scene load_steps=7 format=3 uid="uid://brwwrhbhw84sd"]
 
-[ext_resource type="ArrayMesh" uid="uid://j6ldatnx8hd3" path="res://Cop_Mesh.tres" id="1_2u4n7"]
-[ext_resource type="Script" path="res://Cop.cs" id="1_kjld0"]
-[ext_resource type="ArrayMesh" uid="uid://cswu6nmu77irv" path="res://CopLWheel_Mesh.tres" id="2_da3xk"]
-[ext_resource type="Shape3D" uid="uid://bkmqaihu3qsxb" path="res://Cop_CollisionShape3D.tres" id="3_gvsw4"]
-[ext_resource type="ArrayMesh" uid="uid://bmb4ntf844n4a" path="res://CopRWheel_Mesh.tres" id="3_w5lp3"]
+[ext_resource type="ArrayMesh" uid="uid://bx1fkdmey4ys" path="res://cop/Cop_Mesh.tres" id="1_2u4n7"]
+[ext_resource type="Script" path="res://cop/Cop.cs" id="1_kjld0"]
+[ext_resource type="ArrayMesh" uid="uid://c0o1bhkjm7hpc" path="res://cop/CopLWheel_Mesh.tres" id="2_da3xk"]
+[ext_resource type="Shape3D" uid="uid://bkmqaihu3qsxb" path="res://cop/Cop_CollisionShape3D.tres" id="3_gvsw4"]
+[ext_resource type="ArrayMesh" uid="uid://biapbehfntawg" path="res://cop/CopRWheel_Mesh.tres" id="3_w5lp3"]
+[ext_resource type="PackedScene" uid="uid://3vbbw216o8xp" path="res://car_dashboard/CarDashboard.tscn" id="6_n0lfd"]
 
 [node name="Cop" type="VehicleBody3D"]
 gravity_scale = 4.0
@@ -13,7 +14,6 @@ script = ExtResource("1_kjld0")
 [node name="Cop" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0)
 mesh = ExtResource("1_2u4n7")
-skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-1, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0)
@@ -24,7 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.712048, 0.259024, 1.14105)
 use_as_steering = true
 wheel_roll_influence = 0.01
 wheel_radius = 0.3
-wheel_rest_length = 0.2
+wheel_rest_length = 0.5
 wheel_friction_slip = 1.4
 suspension_travel = 0.15
 suspension_stiffness = 120.0
@@ -38,7 +38,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.711618, 0.259024, 1.14105)
 use_as_steering = true
 wheel_roll_influence = 0.01
 wheel_radius = 0.3
-wheel_rest_length = 0.2
+wheel_rest_length = 0.5
 wheel_friction_slip = 1.4
 suspension_travel = 0.15
 suspension_stiffness = 120.0
@@ -52,8 +52,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.712, 0.259, -1.155)
 use_as_traction = true
 wheel_roll_influence = 0.01
 wheel_radius = 0.3
-wheel_rest_length = 0.2
-wheel_friction_slip = 1.1
+wheel_rest_length = 0.5
+wheel_friction_slip = 1.0
 suspension_travel = 0.15
 suspension_stiffness = 80.0
 
@@ -66,11 +66,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.712, 0.259, -1.155)
 use_as_traction = true
 wheel_roll_influence = 0.01
 wheel_radius = 0.3
-wheel_rest_length = 0.2
-wheel_friction_slip = 1.1
+wheel_rest_length = 0.5
+wheel_friction_slip = 1.0
 suspension_travel = 0.15
 suspension_stiffness = 80.0
 
 [node name="Mesh" type="MeshInstance3D" parent="Cop_BackRWheel"]
 transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
 mesh = ExtResource("3_w5lp3")
+
+[node name="CarDashBoard" parent="." node_paths=PackedStringArray("SteeringWheel") instance=ExtResource("6_n0lfd")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.5, 0.7)
+SteeringWheel = NodePath("SteeringWheel")

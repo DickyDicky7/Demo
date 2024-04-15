@@ -1,6 +1,6 @@
 [gd_resource type="PlaneMesh" load_steps=2 format=3 uid="uid://bleauvjknb3i3"]
 
-[ext_resource type="Material" uid="uid://2tsksa4g5hvm" path="res://Ground_MeshMaterial.tres" id="1_n7l0g"]
+[ext_resource type="Material" uid="uid://2tsksa4g5hvm" path="res://ground/Ground_Mesh_Material.tres" id="1_n7l0g"]
 
 [resource]
 material = ExtResource("1_n7l0g")
