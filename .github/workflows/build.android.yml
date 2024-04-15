@@ -35,7 +35,7 @@ jobs:
             export/android/debug_keystore_pass="android"
         run : |
           mkdir -p ~/.config/godot
-          echo $SETTINGS >> ~/.config/godot/editor_settings-4.tres
+          echo $SETTINGS >> ~/.config/godot/editor_settings-3.tres
       
       - name: export game
         id  : export
