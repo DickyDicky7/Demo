@@ -27,10 +27,10 @@ jobs:
       - name: setup android sdk tools
         uses: android-actions/setup-android@v3.2.1
 
-      - name: use custom editor settings
-        run : |
-          mkdir -p ~/.config/godot
-          cp ./editor_settings-3.tres ~/.config/godot/
+      # - name: use custom editor settings
+      #   run : |
+      #     mkdir -p ~/.config/godot
+      #     cp ./editor_settings-3.tres ~/.config/godot/
         
       - name: export game
         id  : export
